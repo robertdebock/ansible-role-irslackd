@@ -1,5 +1,10 @@
 ---
 # vars file for irslackd
 irslackd_requirements:
-  - git
-  - openssl
+  default:
+    - git
+    - openssl
+  Alpine:
+    - bash
+    - git
+    - openssl
