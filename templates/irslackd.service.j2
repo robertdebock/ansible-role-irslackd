@@ -1,0 +1,12 @@
+{{ ansible_managed | comment }}
+[Unit]
+Description=A self-hosted IRC gateway to Slack
+
+[Service]
+Type=simple
+WorkingDirectory={{ irslackd_dest }}
+ExecStart={{ irslackd_dest }}/irslackd
+ExecStop=/usr/bin/killall irslackd
+
+[Install]
+WantedBy=multi-user.target

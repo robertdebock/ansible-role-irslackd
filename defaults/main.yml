@@ -1,0 +1,16 @@
+---
+# defaults file for irslackd
+
+irslackd_dest: /opt/irslackd
+
+irslackd_version: dd994ef16a1a5245fa4f50fc4cf58e7397d51b93
+
+# To update all packages installed by this roles, set `irslackd_package_state` to `latest`.
+irslackd_package_state: present
+
+irslackd_country: NL
+irslackd_state: Utrecht
+irslackd_location: Breukelen
+irslackd_organization: Very little
+irslackd_organizational_unit: IT Department
+irslackd_common_name: "{{ ansible_fqdn }}"

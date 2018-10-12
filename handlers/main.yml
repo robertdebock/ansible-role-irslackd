@@ -1,0 +1,16 @@
+---
+# handlers file for irslackd
+- name: restart irslackd
+  service:
+    name: "{{ irslackd_service[ansible_distribution]
+          | default (irslackd_service['default'] ) }}"
+    state: restarted
+  when:
+    - ansible_virtualization_type != "docker"
+
+- name: systemctl daemon-reload
+  systemd:
+    daemon_reload: yes
+  become: yes
+  notify:
+    - restart irslackd
