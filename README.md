@@ -61,8 +61,8 @@ This role has been tested against the following distributions and Ansible versio
 |alpine-edge|yes|yes|yes|yes|yes|
 |alpine-latest|yes|yes|yes|yes|yes|
 |archlinux|yes|yes|yes|yes|yes|
-|centos-6|yes|yes|yes|yes|yes|
-|centos-latest|yes|yes|yes|yes|yes|
+|centos-6|no|no|no|no|no|
+|centos-latest|no|no|no|no|no|
 |debian-latest|yes|yes|yes|yes|yes|
 |debian-stable|yes|yes|yes|yes|yes|
 |fedora-latest|yes|yes|yes|yes|yes|

@@ -13,7 +13,7 @@ fi
 
 start() {
   echo -n "Starting irslackd: "
-  returncode=$({{ irslackd_dest }}/irslackd > /dev/null 2>&1 &)
+  returncode=$({{ irslackd_dest }}/irslackd -p {{ irslackd_port }} -a {{ irslackd_address }} > /dev/null 2>&1 &)
   return ${returncode}
 }
 

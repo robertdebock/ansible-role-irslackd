@@ -1,6 +1,9 @@
 ---
 # defaults file for irslackd
 
+irslackd_port: 6697
+irslackd_address: 0.0.0.0
+
 irslackd_dest: /opt/irslackd
 
 irslackd_version: dd994ef16a1a5245fa4f50fc4cf58e7397d51b93
