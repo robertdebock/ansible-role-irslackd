@@ -26,7 +26,7 @@
 - name: save openssl details
   lineinfile:
     path: "{{ irslackd_dest }}/bin/create_tls_key.sh"
-    line: "openssl req -newkey rsa:4096 -nodes -sha512 -x509 -days 3650 -nodes -out $dir/cert.pem -keyout $dir/pkey.pem -subj \"/C={{ irslackd_country }}/ST={{ irslackd_state }}/L={{ irslackd_location }}/O={{ irslackd_organization }}/OU={{ irslackd_organizational_unit }}/CN={{ irslackd_common_name }}\""
+    line: "{{ irslackd_line }}"
     regexp: "^openssl"
 
 - name: generate tls key
