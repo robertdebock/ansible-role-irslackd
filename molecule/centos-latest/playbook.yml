@@ -5,7 +5,7 @@
   become: true
 
   roles:
-    - role: robertdebock.bootstrap
-    - role: robertdebock.epel
-    - role: robertdebock.npm
-    - role: ansible-role-irslackd
+    - robertdebock.bootstrap
+    - robertdebock.epel
+    - robertdebock.npm
+    - ansible-role-irslackd

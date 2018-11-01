@@ -2,8 +2,7 @@
 # tasks file for irslackd
 - name: install required software for irslackd
   package:
-    name: "{{ irslackd_requirements[ansible_distribution]
-          | default(irslackd_requirements['default']) }}"
+    name: "{{ irslackd_requirements }}"
     state: "{{ irslackd_package_state }}"
 
 - name: create irslackd_dest
@@ -14,7 +13,7 @@
 
 - name: install irslackd
   git:
-    repo: https://github.com/adsr/irslackd.git
+    repo: "https://github.com/adsr/irslackd.git"
     dest: "{{ irslackd_dest }}"
     version: "{{ irslackd_version }}"
     update: no

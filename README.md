@@ -1,55 +1,86 @@
 irslackd
-========
+=========
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-irslackd.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-irslackd)
 
-Provides a self-hosted IRC gateway to Slack.
+This roles installs and configures irslackd, a self-hosted IRC gateway to Slack.
 
-[Unit tests](https://travis-ci.org/robertdebock/ansible-role-irslackd) are done on every commit and periodically.
 
-If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-irslackd/issues)
 
-To test this role locally please use [Molecule](https://github.com/metacloud/molecule):
+Example Playbook
+----------------
+
+This example is taken from `molecule/default/playbook.yml`:
 ```
-pip install molecule
-molecule test
+---
+- name: Converge
+  hosts: all
+  gather_facts: false
+  become: true
+
+  roles:
+    - robertdebock.bootstrap
+    - robertdebock.epel
+    - robertdebock.npm
+    - robertdebock.irslackd
+
 ```
-There are many scenarios available, please have a look in the `molecule/` directory.
+
+Role Variables
+--------------
+
+These variables are set in `defaults/main.yml`:
+```
+---
+# defaults file for irslackd
+
+# The tcp port that irslackd should listen on.
+irslackd_port: 6697
+
+# The address that irslackd should bind to.
+irslackd_address: 0.0.0.0
+
+# Where to install irslackd.
+irslackd_dest: /opt/irslackd
+
+# The version of irslackd to install.
+irslackd_version: dd994ef16a1a5245fa4f50fc4cf58e7397d51b93
+
+# To update all packages installed by this roles, set `irslackd_package_state` to `latest`.
+irslackd_package_state: present
+
+# These settings are used for the SSL certificate.
+irslackd_country: NL
+irslackd_state: Utrecht
+irslackd_location: Breukelen
+irslackd_organization: Very little
+irslackd_organizational_unit: IT Department
+irslackd_common_name: "{{ ansible_fqdn }}"
+
+```
+
+Requirements
+------------
+
+- Access to a repository containing packages, likely on the internet.
+- A recent version of Ansible. (Tests run on the last 3 release of Ansible.)
+
+The following roles can be installed to ensure all requirements are met, using `ansible-galaxy install -r requirements.yml`:
+
+---
+- robertdebock.bootstrap
+- robertdebock.epel
+- robertdebock.npm
 
 
 Context
---------
+-------
+
 This role is a part of many compatible roles. Have a look at [the documentation of these roles](https://robertdebock.nl/) for further information.
 
 Here is an overview of related roles:
 ![dependencies](https://raw.githubusercontent.com/robertdebock/drawings/artifacts/irslackd.png "Dependency")
 
-Requirements
-------------
-
-- A system installed with required packages to run Ansible. Hint: [bootstrap](https://galaxy.ansible.com/robertdebock/bootstrap).
-- Access to a repository containing packages, likely on the internet.
-- A recent version of Ansible. (Tests run on the last 3 release of Ansible.)
-- Have epel for RHEL systems installed. Hint: [epel](https://galaxy.ansible.com/robertdebock/epel)
-- Have npm installed. Hint: [npm](https://galaxy.ansible.com/robertdebock/npm)
-
-Role Variables
---------------
-
-irslackd_dest: Where to place the downloaded irslackd [default: /opt/irslackd]
-irslackd_version: The version (either tag or commit hash) to install.
-irslackd_package_state: What to do with packages installed by this role. Either present, absent or latest. [defaut: present]
-irslackd_country: What country to use to generate the SSL certificate. [default: NL
-irslackd_state: What country to use to generate the SSL certificate. [default: Utrecht]
-irslackd_location: What country to use to generate the SSL certificate. [default: Breukelen]
-irslackd_organization: What country to use to generate the SSL certificate. [default: Very little]
-irslackd_organizational_unit: What country to use to generate the SSL certificate. [default: IT Department]
-irslackd_common_name: What country to use to generate the SSL certificate. [default: "{{ ansible_fqdn }}"]
-
-Dependencies
-------------
-
-- None known.
 
 Compatibility
 -------------
@@ -76,39 +107,26 @@ This role has been tested against the following distributions and Ansible versio
 
 A single star means the build may fail, it's marked as an experimental build.
 
-Example Playbook
-----------------
+Testing
+-------
 
-```
----
-- name: irslackd
-  hosts: all
-  gather_facts: no
-  become: yes
+[Unit tests](https://travis-ci.org/robertdebock/ansible-role-irslackd) are done on every commit and periodically.
 
-  roles:
-    - role: robertdebock.bootstrap
-    - role: robertdebock.epel
-    - role: robertdebock.npm
-    - role: robertdebock.irslackd
-```
+If you find issues, please register them in [GitHub](https://github.com/robertdebock/ansible-role-irslackd/issues)
 
-To install this role:
-- Install this role individually using `ansible-galaxy install robertdebock.irslackd`
+To test this role locally please use [Molecule](https://github.com/metacloud/molecule):
+```
+pip install molecule
+molecule test
+```
+There are many specific scenarios available, please have a look in the `molecule/` directory.
 
-Sample roles/requirements.yml: (install with `ansible-galaxy install -r roles/requirements.yml
-```
----
-- name: robertdebock.bootstrap
-- name: robertdebock.epel
-- name: robertdebock.npm
-- name: robertdebock.irslackd
-```
 
 License
 -------
 
-Apache License, Version 2.0
+Apache-2.0
+
 
 Author Information
 ------------------
