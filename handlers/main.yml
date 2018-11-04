@@ -2,8 +2,7 @@
 # handlers file for irslackd
 - name: restart irslackd
   service:
-    name: "{{ irslackd_service[ansible_distribution]
-          | default (irslackd_service['default'] ) }}"
+    name: irslackd
     state: restarted
   when:
     - ansible_virtualization_type != "docker"
