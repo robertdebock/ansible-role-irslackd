@@ -3,9 +3,7 @@ irslackd
 
 [![Build Status](https://travis-ci.org/robertdebock/ansible-role-irslackd.svg?branch=master)](https://travis-ci.org/robertdebock/ansible-role-irslackd)
 
-This roles installs and configures irslackd, a self-hosted IRC gateway to Slack.
-
-
+The purpose of this role is to install and configure irslackd on your system.
 
 Example Playbook
 ----------------

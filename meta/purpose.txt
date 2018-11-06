@@ -1,2 +1,0 @@
-This roles installs and configures irslackd, a self-hosted IRC gateway to Slack.
-
