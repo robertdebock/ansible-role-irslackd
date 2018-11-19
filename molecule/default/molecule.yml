@@ -38,6 +38,8 @@ platforms:
     image: ubuntu:artful
   - name: irslackd-ubuntu-devel
     image: ubuntu:devel
+  - name: irslackd-ubuntu-latest
+    image: ubuntu:latest
 provisioner:
   name: ansible
   lint:
