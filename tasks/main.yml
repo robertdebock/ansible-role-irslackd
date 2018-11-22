@@ -61,4 +61,4 @@
     state: started
     enabled: true
   when:
-    - ansible_virtualization_type != "docker"
+    - ansible_virtualization_type != "docker" or irslackd_ignore_docker

@@ -5,7 +5,7 @@
     name: irslackd
     state: restarted
   when:
-    - ansible_virtualization_type != "docker"
+    - ansible_virtualization_type != "docker" or irslackd_ignore_docker
 
 - name: systemctl daemon-reload
   systemd:
