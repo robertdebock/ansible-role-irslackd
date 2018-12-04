@@ -4,6 +4,9 @@
   package:
     name: "{{ irslackd_requirements }}"
     state: "{{ irslackd_package_state }}"
+  register: irslackd_install_required_software_for_irslackd
+  until: irslackd_install_required_software_for_irslackd is succeeded
+  retries: 3
 
 - name: create irslackd_dest
   file:
@@ -21,6 +24,9 @@
 - name: install irslackd dependencies
   npm:
     path: "{{ irslackd_dest }}"
+  register: irslackd_install_irslackd_dependencies
+  until: irslackd_install_irslackd_dependencies is succeeded
+  retries: 3
 
 - name: save openssl details
   lineinfile:
