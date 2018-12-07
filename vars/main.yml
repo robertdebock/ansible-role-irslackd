@@ -2,11 +2,9 @@
 # vars file for irslackd
 _irslackd_requirements:
   default:
-    - git
     - openssl
   Alpine:
     - bash
-    - git
     - openssl
 
 irslackd_requirements: "{{ _irslackd_requirements[ansible_distribution] | default(_irslackd_requirements['default']) }}"

@@ -8,4 +8,5 @@
     - robertdebock.bootstrap
     - robertdebock.epel
     - robertdebock.npm
+    - robertdebock.git
     - ansible-role-irslackd
