@@ -13,13 +13,14 @@ This example is taken from `molecule/default/playbook.yml`:
 ---
 - name: Converge
   hosts: all
-  gather_facts: false
-  become: true
+  gather_facts: no
+  become: yes
 
   roles:
     - robertdebock.bootstrap
     - robertdebock.epel
     - robertdebock.npm
+    - robertdebock.git
     - robertdebock.irslackd
 
 ```
@@ -74,6 +75,7 @@ The following roles can be installed to ensure all requirements are met, using `
 - robertdebock.bootstrap
 - robertdebock.epel
 - robertdebock.npm
+- robertdebock.git
 
 
 Context
