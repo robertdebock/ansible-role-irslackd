@@ -65,6 +65,6 @@
   service:
     name: irslackd
     state: started
-    enabled: true
+    enabled: yes
   when:
     - ansible_virtualization_type != "docker" or irslackd_ignore_docker
