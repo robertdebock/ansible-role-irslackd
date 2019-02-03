@@ -21,13 +21,6 @@
     version: "{{ irslackd_version }}"
     update: no
 
-- name: install irslackd dependencies
-  npm:
-    path: "{{ irslackd_dest }}"
-  register: irslackd_install_irslackd_dependencies
-  until: irslackd_install_irslackd_dependencies is succeeded
-  retries: 3
-
 - name: save openssl details
   lineinfile:
     path: "{{ irslackd_dest }}/bin/create_tls_key.sh"
