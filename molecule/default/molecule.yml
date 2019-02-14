@@ -34,8 +34,10 @@ platforms:
     image: opensuse:leap
   - name: irslackd-opensuse-tumbleweed
     image: opensuse:tumbleweed
-  - name: irslackd-ubuntu-artful
-    image: ubuntu:artful
+  - name: irslackd-ubuntu-latest
+    image: ubuntu:latest
+  - name: irslackd-ubuntu-rolling
+    image: ubuntu:rolling
   - name: irslackd-ubuntu-devel
     image: ubuntu:devel
   - name: irslackd-ubuntu-latest
