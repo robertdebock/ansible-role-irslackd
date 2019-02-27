@@ -33,26 +33,9 @@
     creates: ~/.irslackd/cert.pem
     chdir: "{{ irslackd_dest }}"
 
-- name: register irslackd to a sysvinit system
-  template:
-    src: irslackd.j2
-    dest: "/etc/init.d/irslackd"
-    mode: 0750
-  when:
-    - ansible_service_mgr == "sysvinit"
-      or ansible_service_mgr == "upstart"
-
-- name: register irslackd to a systemd system
-  template:
-    src: irslackd.service.j2
-    dest: /etc/systemd/system/irslackd.service
-  when:
-    - ansible_service_mgr == "systemd"
-  notify:
-    - systemctl daemon-reload
-
-- name: flush handlers
-  meta: flush_handlers
+- name: create irslackd service
+  import_role:
+    name: robertdebock.service
 
 - name: start irslackd
   service:
