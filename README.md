@@ -21,7 +21,6 @@ This example is taken from `molecule/default/playbook.yml`:
     - robertdebock.epel
     - robertdebock.git
     - robertdebock.irslackd
-
 ```
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
@@ -56,12 +55,6 @@ irslackd_location: Breukelen
 irslackd_organization: Very little
 irslackd_organizational_unit: IT Department
 irslackd_common_name: "{{ ansible_fqdn }}"
-
-# Some Docker containers do not allow managing services, rebooting and writing
-# to some locations in /etc. The role skips tasks that will typically fail in
-# Docker. With this parameter you can tell the role to -not- skip these tasks.
-irslackd_ignore_docker: yes
-
 ```
 
 Requirements
