@@ -13,8 +13,6 @@ irslackd_dest: /opt/irslackd
 # The version of irslackd to install.
 irslackd_version: dd994ef16a1a5245fa4f50fc4cf58e7397d51b93
 
-# To update all packages installed by this roles, set `irslackd_package_state` to `latest`.
-irslackd_package_state: present
 
 # These settings are used for the SSL certificate.
 irslackd_country: NL

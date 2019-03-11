@@ -3,7 +3,7 @@
 - name: install required software for irslackd
   package:
     name: "{{ irslackd_requirements }}"
-    state: "{{ irslackd_package_state }}"
+    state: present
   register: irslackd_install_required_software_for_irslackd
   until: irslackd_install_required_software_for_irslackd is succeeded
   retries: 3
