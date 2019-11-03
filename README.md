@@ -182,7 +182,6 @@ This role uses the following modules:
 - lineinfile
 - package
 - service
-- systemd
 ```
 
 License
