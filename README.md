@@ -2,12 +2,9 @@ irslackd
 =========
 
 <img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/>
-<a href="https://travis-ci.org/robertdebock/ansible-role-irslackd"><img src="https://travis-ci.org/robertdebock/ansible-role-irslackd.svg?branch=master" alt="Build status" align="left"/></a>
+<a href="https://travis-ci.org/robertdebock/ansible-role-irslackd"> <img src="https://travis-ci.org/robertdebock/ansible-role-irslackd.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/30532"/> <img src="https://img.shields.io/ansible/quality/30532"/>
 
 Install and configure irslackd on your system.
-
-<img src="https://img.shields.io/ansible/role/d/30532"/>
-<img src="https://img.shields.io/ansible/quality/30532"/>
 
 Example Playbook
 ----------------
