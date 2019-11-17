@@ -37,6 +37,35 @@ The machine you are running this on, may need to be prepared.
 
 Also see a [full explanation and example](https://robertdebock.nl/how-to-use-these-roles.html) on how to use these roles.
 
+Role Variables
+--------------
+
+These variables are set in `defaults/main.yml`:
+```yaml
+---
+# defaults file for irslackd
+
+# The tcp port that irslackd should listen on.
+irslackd_port: 6697
+
+# The address that irslackd should bind to.
+irslackd_address: 0.0.0.0
+
+# Where to install irslackd.
+irslackd_dest: /opt/irslackd
+
+# The version of irslackd to install.
+irslackd_version: dd994ef16a1a5245fa4f50fc4cf58e7397d51b93
+
+
+# These settings are used for the SSL certificate.
+irslackd_country: NL
+irslackd_state: Utrecht
+irslackd_location: Breukelen
+irslackd_organization: Very little
+irslackd_organizational_unit: IT Department
+irslackd_common_name: "{{ ansible_fqdn }}"
+```
 
 Requirements
 ------------
