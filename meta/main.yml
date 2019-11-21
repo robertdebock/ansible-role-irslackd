@@ -37,7 +37,6 @@ galaxy_info:
 
   galaxy_tags:
     - irslackd
-    - alpine
     - archlinux
     - centos
     - debian
