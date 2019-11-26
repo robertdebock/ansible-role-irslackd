@@ -1,5 +1,7 @@
 ---
 - robertdebock.bootstrap
+- robertdebock.ca_certificates
 - robertdebock.epel
 - robertdebock.git
+- robertdebock.npm
 - robertdebock.service

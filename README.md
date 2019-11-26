@@ -18,7 +18,7 @@ This example is taken from `molecule/resources/playbook.yml` and is tested on ea
   gather_facts: yes
 
   roles:
-    - robertdebock.irslackd
+    - role: robertdebock.irslackd
 ```
 
 The machine you are running this on, may need to be prepared, I use this playbook to ensure everything is in place to let the role work.
@@ -30,9 +30,11 @@ The machine you are running this on, may need to be prepared, I use this playboo
   become: yes
 
   roles:
-    - robertdebock.bootstrap
-    - robertdebock.epel
-    - robertdebock.git
+    - role: robertdebock.bootstrap
+    - role: robertdebock.epel
+    - role: robertdebock.git
+    - role: robertdebock.ca_certificates
+    - role: robertdebock.npm
 ```
 
 
@@ -79,8 +81,10 @@ The following roles can be installed to ensure all requirements are met, using `
 ```yaml
 ---
 - robertdebock.bootstrap
+- robertdebock.ca_certificates
 - robertdebock.epel
 - robertdebock.git
+- robertdebock.npm
 - robertdebock.service
 
 ```
