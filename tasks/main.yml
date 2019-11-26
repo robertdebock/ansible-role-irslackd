@@ -21,6 +21,10 @@
     version: "{{ irslackd_version }}"
     update: no
 
+- name: Install packages based on package.json.
+  npm:
+    path: "{{ irslackd_dest }}"
+
 - name: save openssl details
   lineinfile:
     path: "{{ irslackd_dest }}/bin/create_tls_key.sh"
