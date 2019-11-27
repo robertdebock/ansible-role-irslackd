@@ -105,8 +105,6 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 |container|tag|allow_failures|
 |---------|---|--------------|
-|amazonlinux|1|no|
-|amazonlinux|latest|no|
 |alpine|latest|no|
 |alpine|edge|yes|
 |debian|unstable|yes|
@@ -130,6 +128,8 @@ Some variarations of the build matrix do not work. These are the variations and 
 
 | variation                 | reason                 |
 |---------------------------|------------------------|
+| amazonlinux:1 | SyntaxError: Use of const in strict mode. |
+| amazonlinux:latest | SyntaxError: Unexpected identifier |
 | centos:7 | SyntaxError: Unexpected identifier |
 
 Included version(s)

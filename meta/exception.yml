@@ -1,4 +1,8 @@
 ---
 exceptions:
+  - variation: amazonlinux:1
+    reason: "SyntaxError: Use of const in strict mode."
+  - variation: amazonlinux:latest
+    reason: "SyntaxError: Unexpected identifier"
   - variation: centos:7
     reason: "SyntaxError: Unexpected identifier"
