@@ -188,7 +188,6 @@ This role uses the following modules:
 - lineinfile
 - npm
 - package
-- service
 ```
 
 License
