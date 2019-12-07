@@ -35,6 +35,6 @@ galaxy_info:
     - irslackd
     - archlinux
     - centos
-    - rhel
+    - redhat
 
 dependencies: []
