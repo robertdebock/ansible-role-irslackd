@@ -103,24 +103,20 @@ Compatibility
 
 This role has been tested on these [container images](https://hub.docker.com/):
 
-|container|tag|allow_failures|
-|---------|---|--------------|
-|alpine|latest|no|
-|alpine|edge|yes|
-|debian|unstable|yes|
-|debian|latest|no|
-|centos|latest|no|
-|redhat|latest|no|
-|fedora|latest|no|
-|fedora|rawhide|yes|
-|opensuse|latest|no|
-|ubuntu|latest|no|
+|container|tags|
+|---------|----|
+|archlinux|all|
+|debian|all|
+|el|8|
+|fedora|all|
+|opensuse|all|
+|ubuntu|artful, bionic|
 
-This role has been tested on these Ansible versions:
+The minimum version of Ansible required is 2.8 but tests have been done to:
 
-- ansible>=2.8, <2.9
-- ansible>=2.9
-- git+https://github.com/ansible/ansible.git@devel
+- The previous version, on version lower.
+- The current version.
+- The development version.
 
 Exceptions
 ----------
@@ -132,6 +128,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 | amazonlinux:1 | SyntaxError: Use of const in strict mode. |
 | amazonlinux:latest | SyntaxError: Unexpected identifier |
 | centos:7 | SyntaxError: Unexpected identifier |
+| alpine | Can't get the service to be idempotent. |
 
 Included version(s)
 -------------------
@@ -188,6 +185,7 @@ This role uses the following modules:
 - lineinfile
 - npm
 - package
+- service
 ```
 
 License

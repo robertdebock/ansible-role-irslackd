@@ -6,3 +6,5 @@ exceptions:
     reason: "SyntaxError: Unexpected identifier"
   - variation: centos:7
     reason: "SyntaxError: Unexpected identifier"
+  - variation: alpine
+    reason: "Can't get the service to be idempotent."

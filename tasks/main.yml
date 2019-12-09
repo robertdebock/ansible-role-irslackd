@@ -41,21 +41,8 @@
   import_role:
     name: robertdebock.service
 
-# - name: start irslackd
-#   service:
-#     name: irslackd
-#     state: started
-#     enabled: yes
-
 - name: start irslackd
-  block:
-    - name: start
-      service:
-        name: irslackd
-        state: started
-        enabled: yes
-      register: start
-  always:
-    - name: show
-      debug:
-        msg: "{{ start }}"
+  service:
+    name: irslackd
+    state: started
+    enabled: yes
