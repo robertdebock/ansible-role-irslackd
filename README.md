@@ -118,7 +118,7 @@ This role has been tested on these [container images](https://hub.docker.com/):
 
 |container|tags|
 |---------|----|
-|debian|all|
+|debian|buster|
 |el|8|
 |fedora|all|
 |opensuse|all|
@@ -141,6 +141,7 @@ Some variarations of the build matrix do not work. These are the variations and 
 | amazonlinux:latest | SyntaxError: Unexpected identifier |
 | centos:7 | SyntaxError: Unexpected identifier |
 | alpine | Can't get the service to be idempotent. |
+| debian:testing | The repository 'https://deb.nodesource.com/node_10.x bullseye Release' does not have a Release file. |
 
 Included version(s)
 -------------------

@@ -8,3 +8,5 @@ exceptions:
     reason: "SyntaxError: Unexpected identifier"
   - variation: alpine
     reason: "Can't get the service to be idempotent."
+  - variation: debian:testing
+    reason: "The repository 'https://deb.nodesource.com/node_10.x bullseye Release' does not have a Release file."
