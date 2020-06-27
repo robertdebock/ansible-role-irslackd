@@ -11,8 +11,7 @@ irslackd_address: 0.0.0.0
 irslackd_dest: /opt/irslackd
 
 # The version of irslackd to install.
-irslackd_version: dd994ef16a1a5245fa4f50fc4cf58e7397d51b93
-
+irslackd_version: b8ab630c877819d8b4bac9ab808b408e06cdb350
 
 # These settings are used for the SSL certificate.
 irslackd_country: NL
