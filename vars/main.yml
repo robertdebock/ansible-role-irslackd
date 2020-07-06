@@ -1,5 +1,6 @@
 ---
 # vars file for irslackd
+
 _irslackd_requirements:
   default:
     - openssl
