@@ -7,9 +7,6 @@
   package:
     name: "{{ irslackd_requirements }}"
     state: present
-  register: irslackd_install_required_software_for_irslackd
-  until: irslackd_install_required_software_for_irslackd is succeeded
-  retries: 3
 
 - name: create irslackd_dest
   file:
