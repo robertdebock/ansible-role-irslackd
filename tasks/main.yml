@@ -13,6 +13,7 @@
     path: "{{ irslackd_dest }}"
     state: directory
     recurse: yes
+    mode: "0755"
 
 - name: install irslackd
   git:
@@ -30,6 +31,7 @@
     path: "{{ irslackd_dest }}/bin/create_tls_key.sh"
     line: "{{ irslackd_line }}"
     regexp: "^openssl"
+    mode: "0750"
 
 - name: generate tls key
   command: "{{ irslackd_dest }}/bin/create_tls_key.sh"
