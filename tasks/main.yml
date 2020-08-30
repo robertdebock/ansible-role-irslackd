@@ -12,7 +12,6 @@
   file:
     path: "{{ irslackd_dest }}"
     state: directory
-    recurse: yes
     mode: "0755"
 
 - name: install irslackd
