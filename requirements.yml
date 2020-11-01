@@ -1,7 +1,8 @@
 ---
-- robertdebock.bootstrap
-- robertdebock.ca_certificates
-- robertdebock.epel
-- robertdebock.git
-- robertdebock.npm
-- robertdebock.service
+roles:
+  - name: robertdebock.bootstrap
+  - name: robertdebock.ca_certificates
+  - name: robertdebock.epel
+  - name: robertdebock.git
+  - name: robertdebock.npm
+  - name: robertdebock.service
