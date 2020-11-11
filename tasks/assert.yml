@@ -3,7 +3,7 @@
   assert:
     that:
       - irslackd_port is defined
-      - irslackd_port | int
+      - irslackd_port is number
       - irslackd_port | int > 0
       - irslackd_port | int < 65536
     quiet: yes
