@@ -12,61 +12,52 @@
   assert:
     that:
       - irslackd_address is defined
-      - irslackd_address | length > 0
     quiet: yes
 
 - name: test if irslackd_dest is set correctly
   assert:
     that:
       - irslackd_dest is defined
-      - irslackd_dest | length > 0
     quiet: yes
 
 - name: test if irslackd_version is set correctly
   assert:
     that:
       - irslackd_version is defined
-      - irslackd_version | length > 0
     quiet: yes
 
 - name: test if irslackd_country is set correctly
   assert:
     that:
       - irslackd_country is defined
-      - irslackd_country | length > 0
     quiet: yes
 
 - name: test if irslackd_state is set correctly
   assert:
     that:
       - irslackd_state is defined
-      - irslackd_state | length > 0
     quiet: yes
 
 - name: test if irslackd_location is set correctly
   assert:
     that:
       - irslackd_location is defined
-      - irslackd_location | length > 0
     quiet: yes
 
 - name: test if irslackd_organization is set correctly
   assert:
     that:
       - irslackd_organization is defined
-      - irslackd_organization | length > 0
     quiet: yes
 
 - name: test if irslackd_organizational_unit is set correctly
   assert:
     that:
       - irslackd_organizational_unit is defined
-      - irslackd_organizational_unit | length > 0
     quiet: yes
 
 - name: test if irslackd_common_name is set correctly
   assert:
     that:
       - irslackd_common_name is defined
-      - irslackd_common_name | length > 0
     quiet: yes
