@@ -4,8 +4,8 @@
     that:
       - irslackd_port is defined
       - irslackd_port is number
-      - irslackd_port | int > 0
-      - irslackd_port | int < 65536
+      - irslackd_port > 0
+      - irslackd_port < 65536
     quiet: yes
 
 - name: test if irslackd_address is set correctly
