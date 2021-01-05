@@ -43,6 +43,12 @@
 - name: create irslackd service
   import_role:
     name: robertdebock.service
+  vars:
+    service_list:
+      - name: irslackd
+        description: IRC Slack daemon
+        start_command: "{{ irslackd_dest }}/irslackd -p {{ irslackd_port }} -a {{ irslackd_address }}"
+        working_directory: "{{ irslackd_dest }}"
 
 - name: start irslackd
   service:
