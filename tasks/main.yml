@@ -7,29 +7,29 @@
   delegate_to: localhost
 
 - name: install required software for irslackd
-  package:
+  ansible.builtin.package:
     name: "{{ irslackd_requirements }}"
     state: present
 
 - name: create irslackd_dest
-  file:
+  ansible.builtin.file:
     path: "{{ irslackd_dest }}"
     state: directory
     mode: "0755"
 
 - name: install irslackd
-  git:
+  ansible.builtin.git:
     repo: "https://github.com/adsr/irslackd.git"
     dest: "{{ irslackd_dest }}"
     version: "{{ irslackd_version }}"
     update: no
 
 - name: Install packages based on package.json.
-  npm:
+  community.general.npm:
     path: "{{ irslackd_dest }}"
 
 - name: save openssl details
-  lineinfile:
+  ansible.builtin.lineinfile:
     path: "{{ irslackd_dest }}/bin/create_tls_key.sh"
     line: "{{ irslackd_line }}"
     regexp: "^openssl"
@@ -42,7 +42,7 @@
     chdir: "{{ irslackd_dest }}"
 
 - name: create irslackd service
-  import_role:
+  ansible.builtin.import_role:
     name: robertdebock.service
   vars:
     service_list:
@@ -52,7 +52,7 @@
         working_directory: "{{ irslackd_dest }}"
 
 - name: start irslackd
-  service:
+  ansible.builtin.service:
     name: irslackd
     state: started
     enabled: yes
