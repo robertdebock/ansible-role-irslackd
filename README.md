@@ -1,5 +1,7 @@
 # [Ansible role irslackd](#irslackd)
 
+> THIS ROLE HAS BEEN ARCHIVED AS OF DEC 2023.
+
 Install and configure irslackd on your system.
 
 |GitHub|GitLab|Downloads|Version|
